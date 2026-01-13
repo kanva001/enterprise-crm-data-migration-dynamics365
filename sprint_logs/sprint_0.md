@@ -8,8 +8,8 @@ The focus of this initiative is data migration engineering, including source ana
 cleansing, transformation, validation, reconciliation, and cutover readiness. The project follows
 Agile Scrum delivery and enterprise governance standards.
 
-This repository represents the migration layer of a real-world CRM modernization program and is
-designed to mirror how large organizations execute Dynamics 365 migrations.
+This repository represents the migration layer of a CRM modernization program and is
+designed to execute Dynamics 365 migrations.
 
 ---
 
@@ -85,3 +85,16 @@ rehearse migrations prior to final loads into secured SaaS environments.
 - Data Engineers
 - Solution Architects
 - CRM and Dynamics 365 stakeholders
+
+## Source Data Profiling Results
+
+Baseline profiling was executed against AdventureWorks2022 to assess data readiness.
+
+Activities completed:
+- Row count baselines captured for all in-scope entities
+- Null analysis performed on critical customer attributes
+- Duplicate risk identified using email address analysis
+- Referential integrity validated through orphan checks
+
+Profiling results are stored under the evidence directory and will serve as the
+baseline for post-migration reconciliation.
