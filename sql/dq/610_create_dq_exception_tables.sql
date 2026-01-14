@@ -1,11 +1,6 @@
 USE AdventureWorks2022;
 GO
 
-/*
-Sprint: 3
-Purpose: Central exception queue and detail table
-*/
-
 IF SCHEMA_ID('dq') IS NULL
     EXEC('CREATE SCHEMA dq');
 GO
@@ -19,7 +14,7 @@ BEGIN
         entity_name NVARCHAR(100) NOT NULL,
         source_system NVARCHAR(50) NOT NULL,
         source_primary_key NVARCHAR(100) NOT NULL,
-        status NVARCHAR(20) NOT NULL DEFAULT 'OPEN',     -- OPEN, TRIAGED, RESOLVED, WAIVED
+        status NVARCHAR(20) NOT NULL DEFAULT 'OPEN',
         created_utc DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
         resolved_utc DATETIME2 NULL,
         resolution_notes NVARCHAR(500) NULL
@@ -39,10 +34,7 @@ BEGIN
 END
 GO
 
--- Optional: foreign key for integrity (safe to add now)
-IF NOT EXISTS (
-    SELECT 1 FROM sys.foreign_keys WHERE name = 'fk_exception_rule'
-)
+IF NOT EXISTS (SELECT 1 FROM sys.foreign_keys WHERE name = 'fk_exception_rule')
 BEGIN
     ALTER TABLE dq.exception
     ADD CONSTRAINT fk_exception_rule
