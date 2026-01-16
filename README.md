@@ -5,7 +5,10 @@
 
 ## Program Overview
 
-This repository documents the successful execution of an **enterprise-scale CRM data migration program** to **:contentReference[oaicite:0]{index=0}**, delivered using Agile sprint-based execution with strong emphasis on:
+## Program Overview
+
+This repository documents the successful execution of an **enterprise-scale CRM data migration program to Microsoft Dynamics 365**, delivered using Agile sprint-based execution with a strong emphasis on:
+
 
 - Data integrity and auditability  
 - Zero-disruption production cutover  
